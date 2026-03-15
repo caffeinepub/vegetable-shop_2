@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Font Faces ===== */
+@font-face {
+  font-family: "Fraunces";
+  src: url("/assets/fonts/Fraunces.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url("/assets/fonts/Figtree.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cabinet Grotesk";
+  src: url("/assets/fonts/CabinetGrotesk.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Fresh Green Palette */
+    --background: 0.98 0.008 130;
+    --foreground: 0.18 0.04 145;
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.04 145;
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.04 145;
+
+    /* Primary: rich forest green */
+    --primary: 0.42 0.15 148;
+    --primary-foreground: 0.99 0 0;
+
+    /* Secondary: soft sage */
+    --secondary: 0.93 0.04 140;
+    --secondary-foreground: 0.3 0.08 148;
+
+    /* Muted: pale green-gray */
+    --muted: 0.95 0.015 130;
+    --muted-foreground: 0.5 0.04 145;
+
+    /* Accent: bright lime-green */
+    --accent: 0.88 0.1 140;
+    --accent-foreground: 0.22 0.08 145;
+
+    /* Destructive: warm red */
+    --destructive: 0.55 0.22 27;
+    --destructive-foreground: 0.99 0 0;
+
+    /* Borders & inputs */
+    --border: 0.88 0.025 140;
+    --input: 0.88 0.025 140;
+    --ring: 0.42 0.15 148;
+
+    /* Charts */
+    --chart-1: 0.46 0.18 148;
+    --chart-2: 0.65 0.15 130;
+    --chart-3: 0.55 0.12 90;
+    --chart-4: 0.75 0.16 105;
+    --chart-5: 0.38 0.12 160;
+
+    /* Sidebar */
+    --sidebar: 0.96 0.02 140;
+    --sidebar-foreground: 0.18 0.04 145;
+    --sidebar-primary: 0.42 0.15 148;
+    --sidebar-primary-foreground: 0.99 0 0;
+    --sidebar-accent: 0.9 0.05 140;
+    --sidebar-accent-foreground: 0.3 0.08 148;
+    --sidebar-border: 0.88 0.025 140;
+    --sidebar-ring: 0.42 0.15 148;
+
+    /* Custom tokens */
+    --green-bright: 0.78 0.2 140;
+    --green-fresh: 0.55 0.18 148;
+    --green-dark: 0.28 0.1 148;
+    --cream: 0.97 0.015 95;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Figtree", sans-serif;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: "Cabinet Grotesk", sans-serif;
+    font-weight: 700;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: oklch(var(--muted));
+}
+::-webkit-scrollbar-thumb {
+  background: oklch(var(--primary) / 0.4);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(var(--primary) / 0.7);
+}
